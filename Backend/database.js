@@ -11,7 +11,9 @@ dotenv.config();
             port: process.env.PORT,
             waitForConnections: true,
             connectionLimit: 10,
-            queueLimit: 0
+            queueLimit: 0,
+            enableKeepAlive: true,
+            keepAliveInitialDelay: 0
         });
 
 
