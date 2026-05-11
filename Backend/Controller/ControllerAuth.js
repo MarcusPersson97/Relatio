@@ -4,9 +4,10 @@ const saltrounds = 10;
 
 async function register(req, res){
 
-    const {username, password, email } = req.body;
+    
 
     try {
+        const {username, password, email } = req.body;
         if(!username || !password || !email){
 
            return res.status(400).json({message: "Bad request, username, password and email fields are required"});
