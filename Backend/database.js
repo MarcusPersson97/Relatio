@@ -15,7 +15,11 @@ async function Connect(){
                 connectionLimit: 10,
                 queueLimit: 0,
                 enableKeepAlive: true,
-                keepAliveInitialDelay: 0
+                keepAliveInitialDelay: 0,
+
+                ssl: {
+                    rejectUnauthorized: false
+                }
             });
 
 
