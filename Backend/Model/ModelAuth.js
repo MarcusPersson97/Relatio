@@ -4,16 +4,21 @@ const db = require('../database');
 async function register(user){
 
 
-const connection = await db.Connect();
+try {
+    const connection = await db.Connect();
 
-const [rows] = await connection.query('INSERT INTO railway.Users (Username, Password, Email) VALUES (?, ?, ?)', 
-    [user.username, user.hashedPassword, user.email]);
+    const [rows] = await connection.query('INSERT INTO railway.Users (Username, Password, Email) VALUES (?, ?, ?)', 
+        [user.username, user.hashedPassword, user.email]);
 
-    connection.end();
+        connection.end();
 
-    return rows;
+        return rows;
 
 
+    } catch(err){
+    console.error(err.message);
 }
+}
+
 
 module.exports = {register};
