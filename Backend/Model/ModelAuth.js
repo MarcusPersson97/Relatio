@@ -10,7 +10,7 @@ const [rows] = await connection.query('INSERT INTO railway.users (Username, Pass
     [user.username, user.hashedPassword, user.email]);
 
     return rows;
-
+    
 
 }
 
