@@ -14,7 +14,7 @@ async function register(req, res){
         }
 
         const hashedPassword = bcrypt.hash(password, saltrounds);
-        
+
         const user = {
             username,
             hashedPassword,
@@ -32,5 +32,13 @@ async function register(req, res){
     
 }
 
+async function test(req, res){
 
-module.exports = {register};
+    res.status(200).json({message: "request succesful"});
+
+
+
+}
+
+
+module.exports = {register, test};
