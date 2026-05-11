@@ -14,13 +14,13 @@ async function register(req, res){
         }
 
         const hashedPassword = bcrypt.hash(password, saltrounds);
-
+        
         const user = {
             username,
             hashedPassword,
             email
         }
-        
+
         newUser = await authModel.register(user);
         return res.status(201).json({message: "user was successfully registered", newUser});
     } 
