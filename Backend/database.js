@@ -20,6 +20,7 @@ async function Connect(){
             queueLimit: 0
         });
 
+        console.log(`connected to database`)
         return connection;
         
     } catch(error){
