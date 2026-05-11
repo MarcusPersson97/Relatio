@@ -3,13 +3,7 @@ const dotenv = require('dotenv')
 
 dotenv.config();
 
-
-
-
-async function Connect(){
-
-    try {
-        const connection = await mysql.createPool({
+    const connection = await mysql.createPool({
             database: process.env.DB,
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
@@ -20,16 +14,7 @@ async function Connect(){
             queueLimit: 0
         });
 
-        console.log(`connected to database`)
-        return connection;
-        
-    } catch(error){
-        console.error(`error connecting to database: ${error}`);
-    }
 
-
-    
-}
 
 
 process.on('SIGINT', async () => {
@@ -37,4 +22,4 @@ process.on('SIGINT', async () => {
 } )
 
 
-module.exports = { Connect }
+module.exports = connection;
