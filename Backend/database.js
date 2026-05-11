@@ -6,7 +6,7 @@ dotenv.config();
 
 
 
-function Connect(){
+async function Connect(){
 
     try {
         const connection = await mysql.createConnection({

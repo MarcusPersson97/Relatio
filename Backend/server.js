@@ -6,9 +6,7 @@ const authRoutes = require('./Routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
 
-
 app.listen(3000, ()=>{
-
 console.log('Server is running');
 
 });
