@@ -12,7 +12,7 @@ async function Connect(){
                 password: process.env.DB_PASSWORD,
                 port: process.env.PORT,
                 waitForConnections: true,
-                connectTimeout: 3000,
+                connectTimeout: 60_000,
                 connectionLimit: 10,
                 queueLimit: 0,
                 enableKeepAlive: true,
