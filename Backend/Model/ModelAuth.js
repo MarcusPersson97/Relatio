@@ -13,3 +13,5 @@ const [rows] = await connection.execute('INSERT INTO railway.users (Username, Pa
 
 
 }
+
+module.exports = {register};
