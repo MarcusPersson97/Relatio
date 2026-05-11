@@ -4,7 +4,7 @@ const saltrounds = 10;
 
 async function register(req, res){
 
-    const {username, password, email, } = req.body;
+    const {username, password, email } = req.body;
 
     try {
         if(!username || !password || !email){
