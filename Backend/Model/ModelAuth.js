@@ -11,6 +11,8 @@ try {
         [user.username, user.hashedPassword, user.email]);
 
         connection.end();
+        
+        console.log(`Successfull query: connection ended.`)
 
         return rows;
 
