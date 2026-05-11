@@ -7,9 +7,9 @@ async function register(user){
 const connection = db.Connect();
 
 const [rows] = await connection.execute('INSERT INTO railway.users (Username, Password, Email) VALUES (?, ?, ?)', 
-    [user.username, user.hashedPassword, email]);
-
-
+    [user.username, user.hashedPassword, user.email]);
+    
+    return rows;
 
 
 }
