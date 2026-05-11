@@ -4,7 +4,7 @@ const db = require('../database');
 async function register(user){
 
 
-try {
+
     const connection = await db.Connect();
 
     const [rows] = await connection.query('INSERT INTO railway.Users (Username, Password, Email) VALUES (?, ?, ?)', 
@@ -17,9 +17,6 @@ try {
         return rows;
 
 
-    } catch(err){
-    console.error(err.message);
-}
 }
 
 
