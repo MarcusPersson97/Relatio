@@ -5,7 +5,7 @@ dotenv.config();
 
 async function Connect(){
     try {
-    const connection =  mysql.createPool({
+    const connection = await mysql.createPool({
                 database: process.env.DB,
                 host: process.env.DB_HOST,
                 user: process.env.DB_USER,
