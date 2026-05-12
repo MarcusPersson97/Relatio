@@ -4,11 +4,16 @@ const db = require('../database');
 async function register(user){
 const connection = await db.Connect();
 
-const [rows] = await connection.query('INSERT INTO railway.users (Username, Password, Email) VALUES (?, ?, ?)', 
-    [user.username, user.hashedPassword, user.email]);
+    const connection = await db.Connect();
 
-    return rows;
+    const [rows] = await connection.query('INSERT INTO railway.Users (Username, Password, Email) VALUES (?, ?, ?)', 
+        [user.username, user.hashedPassword, user.email]);
 
+        connection.end();
+        
+        console.log(`Successfull query: connection ended.`)
+
+        return rows;
 
 }
 
@@ -51,3 +56,10 @@ else{
 
 
 module.exports = {register, login, getUser, userExists};
+=======
+
+}
+
+
+module.exports = {register};
+>>>>>>> 104fa6b0b14eae00d127d6e7d20b2928f6e6162e
