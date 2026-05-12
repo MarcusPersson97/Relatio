@@ -1,8 +1,10 @@
 import StartPage from "./pages/StartPage";
+import HomePage from "./pages/HomePage";
 import "./App.css";
 
 function App() {
-  return <StartPage />;
+  return <HomePage />;
+//  return <StartPage />;
 }
 
 export default App;
