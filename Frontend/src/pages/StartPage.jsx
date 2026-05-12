@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "./StartPage.css";
 
 function StartPage() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="start-page" id="home">
       <header className="navbar">
@@ -10,7 +14,7 @@ function StartPage() {
           <a href="#home">Home</a>
           <a href="#features">Features</a>
           <a href="#about">About</a>
-          <button className="nav-button">Login</button>
+          <button className="nav-button" onClick={() => navigate("/login")}>Login</button>
           <button className="signup-button">Sign up</button>
         </nav>
       </header>
@@ -23,7 +27,7 @@ function StartPage() {
         </p>
 
         <div className="hero-buttons">
-          <button className="primary-button">Get started</button>
+          <button className="primary-button" onClick={() => navigate("/login")}>Get started</button>
           <button className="secondary-button">Learn more</button>
         </div>
       </main>
