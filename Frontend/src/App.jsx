@@ -1,9 +1,8 @@
+import StartPage from "./pages/StartPage";
+import "./App.css";
+
 function App() {
-  return (
-    <div>
-      <h1>Hello React + Vite</h1>
-    </div>
-  );
+  return <StartPage />;
 }
 
 export default App;
