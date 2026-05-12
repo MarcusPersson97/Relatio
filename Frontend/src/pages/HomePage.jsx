@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 function HomePage() {
+
+    const navigate = useNavigate();
+
     return (
         <div className="home-page">
             <aside className="sidebar">
@@ -15,7 +19,7 @@ function HomePage() {
                     <button>Calendar</button>
                 </nav>
 
-                <button className="logout-button">Logout</button>
+                <button className="logout-button" onClick={() => navigate("/")}>Logout</button>
             </aside>
 
             <main className="dashboard">
