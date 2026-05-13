@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router();
-const entityController = require('../Controller/ControllerEntity')
+const entityController = require('../Controller/ControllerMenu')
 
 
-router.get('/entities', entityController.getEntities);
+router.get('/entities', entityController.getMenu);
 router.post('/entities', entityController.createEntity);
 router.delete('/entities', entityController.deleteEntity);
 
