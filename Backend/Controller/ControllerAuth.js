@@ -60,7 +60,7 @@ async function login(req, res){
 
     catch (error) {
         console.error(error);
-        return res.status(500).json({message: "Server error", error});
+        return res.status(500).json({message: "Server error", error: error.message});
     }
 
 }
