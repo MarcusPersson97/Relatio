@@ -3,7 +3,7 @@ const db = require('../database');
 
 
 
-async function getEntities(){
+async function getMenu(){
 
     const connection = await db.Connect();
 
@@ -14,4 +14,4 @@ async function getEntities(){
     return entities;
 }
 
-module.exports = {getEntities};
+module.exports = {getEntities: getMenu};

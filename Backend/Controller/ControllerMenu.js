@@ -1,7 +1,8 @@
-const entityModel = require('../Model/ModelEntity')
+const entityModel = require('../Model/ModelMenu')
 
 
-async function getEntities(req, res){
+// returns all menu entities ( contacts, comapnies,)
+async function getMenu(req, res){
 
     const entities = await entityModel.getEntities()
 
@@ -26,4 +27,4 @@ async function deleteEntity(req, res){
 
 }
 
-module.exports = {getEntities, createEntity, deleteEntity};
+module.exports = {getMenu, createEntity, deleteEntity};
