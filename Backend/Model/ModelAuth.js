@@ -24,10 +24,10 @@ return rows[0];
 
 }
 
-async function userExists(email){
+async function userExists(Email){
 
 const connection = await db.Connect();
-const [rows] = await connection.query('SELECT Password FROM railway.Users WHERE Email = ?', [email]);
+const [rows] = await connection.query('SELECT Password FROM railway.Users WHERE Email = ?', [Email]);
 if(rows.length>0){
 
     return rows[0];
@@ -40,10 +40,11 @@ else{
 }
 }
 
-async function getUser(email){
+
+async function getUser(username){
 
 const connection = await db.Connect();
-const [rows] = await connection.query('SELECT * FROM railway.Users WHERE Email = ?', [email]);
+const [rows] = await connection.query('SELECT * FROM railway.Users WHERE Username = ?', [username]);
 if(rows.length>0){
 
     return rows[0];
