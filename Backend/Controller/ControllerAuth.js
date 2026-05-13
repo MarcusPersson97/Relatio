@@ -13,7 +13,7 @@ async function register(req, res){
            return res.status(400).json({message: "Bad request, username, password and email fields are required"});
 
         }
-
+        
         const hashedPassword = await bcrypt.hash(password, saltrounds);
         const user = {
             username,
