@@ -1,3 +1,4 @@
+import PageHeader from "../components/PageHeader";
 import "./Contacts.css";
 
 function Contacts() {
@@ -24,14 +25,11 @@ function Contacts() {
 
   return (
     <div className="contacts-page">
-      <div className="contacts-header">
-        <div>
-          <h1>Contacts</h1>
-          <p>Manage and organize your customer contacts.</p>
-        </div>
-
-        <button className="add-contact-button">Add contact</button>
-      </div>
+      <PageHeader
+        title="Contacts"
+        description="Manage and organize your customer contacts."
+        buttonText="Add contact"
+      />
 
       <div className="contacts-toolbar">
         <input type="text" placeholder="Search contacts..." />
