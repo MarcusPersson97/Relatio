@@ -1,18 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import StartPage from "./pages/StartPage";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-
-import "./App.css";
+import Contacts from "./pages/Contacts";
+import DashboardLayout from "./components/DashboardLayout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<StartPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />} />
+
+        <Route element={<DashboardLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
