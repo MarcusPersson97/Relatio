@@ -15,10 +15,10 @@ async function register(req, res){
         }
         
         const usernameAlreadyExists = await authModel.getUser(username);
-        if(userAlreadyExists){
+        if(usernameAlreadyExists){
             return res.status(409).json({message: "A user with that username already exists"});
         }
-        
+
         const emailAlreadyExists = await authModel.userExists(email);
         if(emailAlreadyExists){
             return res.status(409).json({message: "A user with that email already exists"});
