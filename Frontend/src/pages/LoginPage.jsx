@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "../pages/LoginPage.css";
 
 function LoginPage() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   function handleLogin(event) {
     event.preventDefault();
@@ -15,7 +16,7 @@ function LoginPage() {
     if (email === "test@test.com" && password === "1234") {
       navigate("/home");
     } else {
-      alert("Wrong email or password");
+      setError("Wrong email or password");
     }
   }
 
@@ -43,7 +44,14 @@ function LoginPage() {
           required
         />
 
+        {error && <div className="login-error">{error}</div>}
+
         <button type="submit">Login</button>
+
+        <div className="login-footer">
+          Don't have an account? <span>Sign up</span>
+        </div>
+        
       </form>
     </main>
   );
