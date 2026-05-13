@@ -13,6 +13,16 @@ async function register(req, res){
            return res.status(400).json({message: "Bad request, username, password and email fields are required"});
 
         }
+        
+        const usernameAlreadyExists = await authModel.getUser(username);
+        if(userAlreadyExists){
+            return res.status(409).json({message: "A user with that username already exists"});
+        }
+        
+        const emailAlreadyExists = await authModel.userExists(email);
+        if(emailAlreadyExists){
+            return res.status(409).json({message: "A user with that email already exists"});
+        }
 
         const hashedPassword = await bcrypt.hash(password, saltrounds);
         const user = {
