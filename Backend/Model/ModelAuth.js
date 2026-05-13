@@ -26,7 +26,7 @@ return rows[0];
 
 async function userExists(email){
 
-const connection = await db.connect();
+const connection = await db.Connect();
 const [rows] = await connection.query('SELECT Password FROM railway.Users WHERE Email = ?', [email]);
 if(rows.length>0){
 
@@ -49,7 +49,7 @@ if(rows.length>0){
     return rows[0];
 
 }
-else{
+else{   
 
     return null;
 
