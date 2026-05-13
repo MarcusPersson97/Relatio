@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import StartPage from "./pages/StartPage";
+import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import Contacts from "./pages/Contacts";
 import DashboardLayout from "./components/DashboardLayout";
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<StartPage />} />
+        <Route path="/login" element={<LoginPage />} />
 
         <Route element={<DashboardLayout />}>
           <Route path="/home" element={<HomePage />} />
