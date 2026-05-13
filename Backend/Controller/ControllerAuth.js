@@ -5,7 +5,6 @@ const saltrounds = 10;
 
 async function register(req, res){
 
-    
 
     try {
         const {username, password, email } = req.body;
@@ -35,15 +34,15 @@ async function register(req, res){
 
 async function login(req, res){
 
-    const {username, password} = req.body;
+    const {email, password} = req.body;
     
-    if(!username || !password){
+    if(!email || !password){
        return res.status(400).json({message: "bad request, incorrect data"});
 
     }
 
     try {
-        const storedUser = await authModel.userExists(username);
+        const storedUser = await authModel.userExists(email);
         if(!storedUser){
             return res.status(404).json({message: "user was not found"});
         }
@@ -51,7 +50,7 @@ async function login(req, res){
         const isValidPassword = await bcrypt.compare(password, storedUser.password);
 
         if(isValidPassword){
-            const userInfo = await authModel.login(username);
+            const userInfo = await authModel.login(email);
             return res.status(200).json({message: "You successfully logged in", userInfo});
         }
         else{
