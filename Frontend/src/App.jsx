@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import Contacts from "./pages/Contacts";
 import DashboardLayout from "./components/DashboardLayout";
+import Companies from "./pages/Companies";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route element={<DashboardLayout />}>
           <Route path="/home" element={<HomePage />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/companies" element={<Companies />} />
         </Route>
       </Routes>
     </BrowserRouter>

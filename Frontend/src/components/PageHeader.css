@@ -1,0 +1,35 @@
+.page-header {
+  height: 90px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.page-header-text h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.page-header-text p {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  font-size: 18px;
+}
+
+.page-header-button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.page-header-button:hover {
+  background-color: var(--color-primary-hover);
+}

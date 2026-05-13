@@ -25,7 +25,13 @@ function DashboardLayout() {
                         Contacts
                     </button>
 
-                    <button>Companies</button>
+                    <button
+                        className={location.pathname === "/companies" ? "active" : ""}
+                        onClick={() => navigate("/companies")}
+                    >
+                        Companies
+                    </button>
+                    
                     <button>Tasks</button>
                     <button>Notes</button>
                     <button>Calendar</button>
