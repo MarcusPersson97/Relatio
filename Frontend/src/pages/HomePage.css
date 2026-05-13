@@ -6,6 +6,13 @@
 
 .sidebar {
   width: 260px;
+  min-width: 260px;
+  flex-shrink: 0;
+
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
   padding: 32px 24px;
 
   background-color: var(--color-surface);
@@ -29,6 +36,16 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.sidebar-nav button.active {
+  background-color: var(--color-card);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.sidebar-nav button.active {
+  border-left: 4px solid var(--color-primary);
 }
 
 .sidebar-nav button,
@@ -70,7 +87,9 @@
 
 .dashboard {
   flex: 1;
+  min-width: 0;
   padding: 48px;
+  overflow-x: hidden;
 }
 
 .dashboard-header h1 {
