@@ -13,7 +13,7 @@ async function register(req, res){
            return res.status(400).json({message: "Bad request, username, password and email fields are required"});
 
         }
-        
+
         const hashedPassword = await bcrypt.hash(password, saltrounds);
         const user = {
             username,
@@ -47,7 +47,7 @@ async function login(req, res){
             return res.status(404).json({message: "user was not found"});
         }
 
-        const isValidPassword = await bcrypt.compare(password, storedUser.password);
+        const isValidPassword = await bcrypt.compare(password, storedUser.Password);
 
         if(isValidPassword){
             const userInfo = await authModel.login(email);
