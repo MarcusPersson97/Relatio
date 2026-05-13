@@ -19,7 +19,7 @@ async function register(user){
 async function login(email){
 
 const connection = await db.Connect();
-const [rows] = await connection.query('SELECT username, email FROM railway.users WHERE email = ?', [email]);
+const [rows] = await connection.query('SELECT Username, Email FROM railway.Users WHERE Email = ?', [email]);
 return rows[0];
 
 }
@@ -27,7 +27,7 @@ return rows[0];
 async function userExists(email){
 
 const connection = await db.connect();
-const [rows] = await connection.query('SELECT password FROM railway.users WHERE email = ?', [email]);
+const [rows] = await connection.query('SELECT Password FROM railway.Users WHERE Email = ?', [email]);
 if(rows.length>0){
 
     return rows[0];
@@ -43,7 +43,7 @@ else{
 async function getUser(email){
 
 const connection = await db.Connect();
-const [rows] = await connection.query('SELECT * FROM railway.users WHERE email = ?', [email]);
+const [rows] = await connection.query('SELECT * FROM railway.Users WHERE Email = ?', [email]);
 if(rows.length>0){
 
     return rows[0];
