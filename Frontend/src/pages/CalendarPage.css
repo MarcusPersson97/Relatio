@@ -1,0 +1,158 @@
+.calendar-page {
+  color: var(--color-text);
+}
+
+.calendar-layout {
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.calendar-card,
+.activity-panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  padding: 32px;
+}
+
+.calendar-month h2,
+.activity-panel h2 {
+  margin-top: 0;
+}
+
+.calendar-grid {
+  margin-top: 24px;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.calendar-day {
+  min-height: 86px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-card);
+  color: var(--color-text);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 12px;
+}
+
+.calendar-day:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.calendar-day.selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.calendar-day.selected .activity-dot {
+  background-color: white;
+}
+
+.selected-date {
+  color: var(--color-muted);
+}
+
+.empty-message {
+  margin-top: 32px;
+  color: var(--color-muted);
+}
+
+.activity-list {
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-card {
+  padding: 20px;
+
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-card);
+}
+
+.activity-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-top span {
+  padding: 6px 12px;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.activity-card h3 {
+  margin-bottom: 8px;
+}
+
+.activity-card p {
+  margin: 6px 0;
+  color: var(--color-muted);
+}
+
+.activity-status {
+  margin-top: 14px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: var(--color-primary);
+}
+
+.activity-card small {
+  display: block;
+  margin-top: 12px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
