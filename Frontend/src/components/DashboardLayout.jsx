@@ -34,7 +34,12 @@ function DashboardLayout() {
                     
                     <button>Tasks</button>
                     <button>Notes</button>
-                    <button>Calendar</button>
+                    <button
+                        className={location.pathname === "/calendar" ? "active" : ""}
+                        onClick={() => navigate("/calendar")}
+                    >
+                        Calendar
+                    </button>
                 </nav>
 
                 <button className="logout-button" onClick={() => navigate("/")}>Logout</button>

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import Contacts from "./pages/Contacts";
 import DashboardLayout from "./components/DashboardLayout";
 import Companies from "./pages/Companies";
+import CalendarPage from "./pages/CalendarPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/companies" element={<Companies />} />
+          <Route path="/calendar" element={<CalendarPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
