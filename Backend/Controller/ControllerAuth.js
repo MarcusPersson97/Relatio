@@ -1,7 +1,8 @@
 const authModel = require('../Model/ModelAuth');
+const authServices = require('../Services/authServices');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const saltrounds = 10;
+
 
 async function register(req, res){
 
