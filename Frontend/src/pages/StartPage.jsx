@@ -15,7 +15,7 @@ function StartPage() {
           <a href="#features">Features</a>
           <a href="#about">About</a>
           <button className="nav-button" onClick={() => navigate("/login")}>Login</button>
-          <button className="signup-button">Sign up</button>
+          <button className="signup-button" onClick={() => navigate("/signup")}>Sign up</button>
         </nav>
       </header>
 

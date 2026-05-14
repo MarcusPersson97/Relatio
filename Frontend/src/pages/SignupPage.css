@@ -1,0 +1,104 @@
+.signup-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: var(--color-background);
+}
+
+.signup-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 42px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-large);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-card h1 {
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: -1px;
+    color: var(--color-text);
+}
+
+.signup-card p {
+    margin-top: 14px;
+    margin-bottom: 32px;
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+.signup-card label {
+    margin-bottom: 8px;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.signup-card input {
+    padding: 14px 16px;
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--color-border);
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.signup-card input:focus {
+    border-color: var(--color-primary);
+}
+
+.signup-card button {
+    margin-top: 30px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: var(--color-pill);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.signup-card button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.signup-error {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: var(--radius-medium);
+  background-color: #ffe9e9;
+  color: #b42318;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.signup-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.signup-footer span {
+  color: var(--color-primary);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .signup-card {
+    padding: 32px 24px;
+  }
+  .signup-card h1 {
+    font-size: 34px;
+  }
+}

@@ -49,7 +49,8 @@ function LoginPage() {
         <button type="submit">Login</button>
 
         <div className="login-footer">
-          Don't have an account? <span>Sign up</span>
+          Don't have an account?{" "}
+          <span onClick={() => navigate("/signup")}>Sign up</span>
         </div>
         
       </form>
