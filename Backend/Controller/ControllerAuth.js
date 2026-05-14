@@ -59,7 +59,7 @@ async function login(req, res){
         }
 
         const isValidPassword = await bcrypt.compare(password, storedUser.Password);
-
+        
         if(isValidPassword){
             const userInfo = await authModel.login(email);
             return res.status(200).json({message: "You successfully logged in", userInfo});
