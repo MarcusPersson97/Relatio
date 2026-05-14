@@ -14,7 +14,7 @@ async function verifyJwt(token){
     try {
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
         return decodedToken;
-
+        
     } 
     
     catch (error) {
