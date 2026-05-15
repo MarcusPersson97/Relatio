@@ -5,9 +5,9 @@ async function register(user){
 
     const connection = await db.Connect();
 
-    const [rows] = await connection.query('INSERT INTO railway.Users (Username, Password, Email) VALUES (?, ?, ?)', 
-        [user.username, user.hashedPassword, user.email]);
-
+    const [rows] = await connection.query('INSERT INTO railway.Users (Username, Password, Email, Role) VALUES (?, ?, ?, ?)', 
+        [user.username, user.hashedPassword, user.email, "User"]);
+        
         connection.end();
         
         console.log(`Successfull query: connection ended.`)
