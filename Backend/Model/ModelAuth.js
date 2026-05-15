@@ -1,5 +1,6 @@
 const mysql = require('mysql2/promise');
 const db = require('../database');
+const { connect } = require('../Routes/authRoutes');
 
 async function register(user){
 
@@ -27,7 +28,7 @@ return rows[0];
 async function userExists(Email){
 
 const connection = await db.Connect();
-const [rows] = await connection.query('SELECT Password, UserId FROM railway.Users WHERE Email = ?', [Email]);
+const [rows] = await connection.query('SELECT Password, UserId, Role FROM railway.Users WHERE Email = ?', [Email]);
 if(rows.length>0){
 
     return rows[0];
@@ -57,7 +58,14 @@ else{
 }
 }
 
+async function getRole(username){
 
-module.exports = {register, login, getUser, userExists};
+    const connection = await db.Connect();
+    const [rows] = await connection.query('SELECT Role FROM railway.Users WHERE Username = ?', [username]);
+
+
+}
+
+module.exports = {register, login, getUser, userExists, getRole};
 
 
