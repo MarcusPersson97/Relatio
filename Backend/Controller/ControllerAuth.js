@@ -44,7 +44,7 @@ async function register(req, res){
 }
 
 async function login(req, res){
-
+    console.log(`will log in...`)
     const {email, password} = req.body;
     
     if(!email || !password){
@@ -53,7 +53,8 @@ async function login(req, res){
     }
 
     try {
-        const storedUser = await authModel.userExists(email);
+        const storedUser = await authModel.userExists(email); 
+
         if(!storedUser){
             return res.status(404).json({message: "user was not found"});
         }
