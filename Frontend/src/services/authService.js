@@ -32,7 +32,7 @@ export async function registerUser(username, email, password) {
     try {
         const response = await fetch(`${API_URL}/register`, {
             method: "POST",
-            header: {
+            headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ username, email, password }),
