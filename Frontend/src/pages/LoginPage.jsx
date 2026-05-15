@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../services/authService";
 import "../pages/LoginPage.css";
 
 function LoginPage() {
@@ -9,14 +10,19 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleLogin(event) {
+  async function handleLogin(event) {
     event.preventDefault();
+    setError("");
 
-    // Temporary fake login until backend is ready
-    if (email === "test@test.com" && password === "1234") {
+    const result = await loginUser(email, password);
+
+    if (result.success) {
+      localStorage.setItem("token", result.token);
+      localStorage.setItem("user", JSON.stringify(result.user));
+
       navigate("/home");
     } else {
-      setError("Wrong email or password");
+      setError(result.message);
     }
   }
 
