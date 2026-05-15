@@ -12,7 +12,7 @@ async function register(user){
         
         console.log(`Successfull query: connection ended.`)
 
-        return rows;
+        return rows[0];
 
 }
 
