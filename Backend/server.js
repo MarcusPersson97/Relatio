@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors()); 
+app.use(cors({origin: 'http://localhost:5173'})); 
 
 const authRoutes = require('./Routes/authRoutes');
 app.use(express.json());
