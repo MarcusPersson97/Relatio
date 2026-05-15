@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../services/authService";
 import "./SignupPage.css";
 
 function SignupPage() {
@@ -11,25 +12,33 @@ function SignupPage() {
 
     const [error, setError] = useState("");
 
-    function handleSignup(event) {
+    async function handleSignup(event) {
         event.preventDefault();
 
-        setEmail.error("");
+        setError("");
 
-        if (!username || !email || !password) {
-            setError("Please fill in all fields");
-            return;
+        const result = await registerUser(username, email, password);
+
+        if (result.success) {
+            navigate("/login");
+        } else {
+            setError(result.messsage);
         }
 
-        // Temp. mock signup untill backend is ready
-        console.log("Siggnup data:", {
-            username,
-            email,
-            password,
-        });
+        // if (!username || !email || !password) {
+        //    setError("Please fill in all fields");
+        //    return;
+        //}
 
-        alert("account create successfully!");
-        navigate("/login")
+        // Temp. mock signup untill backend is ready
+        // console.log("Siggnup data:", {
+        //    username,
+        //    email,
+        //    password,
+        // });
+
+        // alert("account create successfully!");
+        // navigate("/login")
     }
 
     return (
@@ -44,6 +53,15 @@ function SignupPage() {
                 placeholder="Enter username"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
+                required
+                />
+
+                <label>Email</label>
+                <input
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 required
                 />
 
