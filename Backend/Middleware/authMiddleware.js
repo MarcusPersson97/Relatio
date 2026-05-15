@@ -20,6 +20,12 @@ function authMiddleware(req, res, next){
 
 }
 
+function roleCheck(req, res, next){
+
+    
 
 
-module.exports = {authMiddleware};
+}
+
+
+module.exports = {authMiddleware, roleCheck};

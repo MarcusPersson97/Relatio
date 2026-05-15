@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 async function createJwt(user){
 
@@ -11,10 +12,11 @@ async function createJwt(user){
 }
 
 async function verifyJwt(token){
+    
     try {
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
         return decodedToken;
-        
+
     } 
     
     catch (error) {
