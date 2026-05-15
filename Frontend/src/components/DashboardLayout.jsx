@@ -1,9 +1,15 @@
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import { logoutUser } from "../services/authService";
 import "../pages/HomePage.css";
 
 function DashboardLayout() {
     const navigate = useNavigate();
     const location = useLocation();
+
+    function handleLogout() {
+        logoutUser();
+        navigate("/login");
+    }
 
     return (
         <div className="home-page">
@@ -42,7 +48,9 @@ function DashboardLayout() {
                     </button>
                 </nav>
 
-                <button className="logout-button" onClick={() => navigate("/")}>Logout</button>
+                <button className="logout-button" onClick={handleLogout}>
+                    Logout
+                </button>
             </aside>
 
             <main className="dashboard">
