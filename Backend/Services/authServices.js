@@ -52,9 +52,4 @@ async function verifyAdminRole(role){
 
 
 
-
-
-
-
-
-module.exports = {createJwt, verifyJwt, verifyRole};
+module.exports = {createJwt, verifyJwt, verifyAdminRole};
