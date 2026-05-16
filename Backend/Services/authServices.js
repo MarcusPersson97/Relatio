@@ -36,6 +36,18 @@ async function verifyJwt(token){
 
 }
 
+async function verifyAdminRole(role){
+
+    if(role == 'Admin'){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+
+
+}
 
 
 
@@ -45,5 +57,4 @@ async function verifyJwt(token){
 
 
 
-
-module.exports = {createJwt, verifyJwt};
+module.exports = {createJwt, verifyJwt, verifyRole};
